@@ -1,29 +1,47 @@
 //
-//  person.h
-//  Mikaela
-//
-//  Created by Timothy Hallett on 29/09/2014.
-//  Copyright (c) 2014 Timothy Hallett. All rights reserved.
+//  Created by Mikaela Smit on 22/10/2014.
+//  Copyright (c) 2014 Mikael Smit. All rights reserved.
 //
 
-#ifndef Mikaela_person_h
-#define Mikaela_person_h
+#ifndef person_h				// If not defined then defines it  # are pre-compiler definitions
+#define person_h				// If not defined then defines it  # are pre-compiler definitions
 
-class patient{
-    public:
+using namespace std;
+
+//// --- CREATING PATIENTS ---
+
+class patient{							// Classes are considered private unless stated otherwise 
+public:
     
-    patient();
+    patient();							// Class constructor or calling function for patient
     
+
+	//// --- PATIENT CHARACTERISTICS ---
+	int PatientID;
+	int DoB;
+    int Sex;
+
+    int CD4CellCountCatT0;				//HIV related characteristics
+	int CD4CellCountCat;
+	int DateHIVInfection;
+	//int HIVStatus;					// Include when model includes HIV-
+
+
+	//// --- EVENTS---
+	// TO BE INSERTED
+
+
+	//// --- FUNCTIONS ----
+	// ---- Functions to produce output ---
     void TellMyDob();
 	void TellMySex();
+	void TellMyPatientID();
     
-    int DoB;
-    int Sex;
-    int CD4CellCountCat;
-
+   
+	// ---- Functions to assign characteristics ---
 	void GenderDistribution();
+	void PatientIDAssign(int x);
     
 };
-
 
 #endif

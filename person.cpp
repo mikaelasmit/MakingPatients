@@ -1,9 +1,6 @@
 //
-//  person.cpp
-//  Mikaela
-//
-//  Created by Timothy Hallett on 29/09/2014.
-//  Copyright (c) 2014 Timothy Hallett. All rights reserved.
+//  Created by Mikaela Smit on 22/10/2014.
+//  Copyright (c) 2014 Mikael Smit. All rights reserved.
 //
 
 #include <stdio.h>
@@ -13,30 +10,34 @@
 #include "person.h"
 
 
-patient::patient()
-{
-    std::cout << "I am a new person being made\n";
-    Sex=-999;
+//// --- CLASS (PATIENT) CONSTRUCTOR ---
+
+patient::patient()											// First 'patient' class second constructor/variable and no return type means its a constructor
+	{
+    PatientID=0;
+	Sex=-999;
 	DoB=-999;
 	CD4CellCountCat=-999;
-}
+	}
 
 
-void patient::TellMyDob(){
-    std::cout <<" My Date of birth is..." <<DoB<<std::endl;
+//// --- FUNCTIONS TO CREATE OUTPUT ---
+void patient::TellMyPatientID(){							// --- Tell PatientID ---
+	cout <<" My Patient ID is..." << PatientID << endl;}
 
-}
+void patient::TellMySex(){									// --- Tell Sex ---
+	cout <<" My Sex is..." << Sex << endl;}	
 
-void patient::TellMySex(){
-    std::cout <<" My Sex is..." <<Sex<<std::endl;
-
-}
+void patient::TellMyDob(){									// --- Tell Date of Birth ---
+	cout <<" My Date of birth is..." << DoB << endl;}
 
 	
-void patient::GenderDistribution(){
+//// --- FUNCTIONS TO ASSIGN CHARACTERISTICS ---	
+void patient::PatientIDAssign(int x){						// --- Assign Patient ID ---
+	PatientID=x;}
+
+void patient::GenderDistribution(){							// --- Assign Gender Distribution ---
 double	r = ((double) rand() / (RAND_MAX)) ;
-	if (r<=0.7) {  
-		Sex=1;	//no need to define in patient as first line of this chunk already states this is taking place in 'patient'
-		}
-	else {Sex=2;}
-	}
+	if (r<=0.7){  
+		Sex=1;}												// No need to define in patient as first line of this chunk already states this is taking place in 'patient'
+	else {Sex=2;}}
