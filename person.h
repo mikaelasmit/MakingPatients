@@ -21,10 +21,10 @@ public:
 	int DoB;
     int Sex;
 
-    int CD4CellCountCatT0;				//HIV related characteristics
+	int CD4CellCountCatT0;						//HIV related characteristics
 	int CD4CellCountCat;
 	int DateHIVInfection;
-	//int HIVStatus;					// Include when model includes HIV-
+	//int HIVStatus;							// Include when model includes HIV-
 
 
 	//// --- EVENTS---
@@ -41,7 +41,8 @@ public:
 	// ---- Functions to assign characteristics ---
 	void GenderDistribution();
 	void PatientIDAssign(int x);
-    
+	void GetMyDateOfBirth(int x, int y);		// Convert to date of birth later??
+	    
 };
 
 #endif

@@ -10,6 +10,7 @@
 #include "person.h"
 
 
+
 //// --- CLASS (PATIENT) CONSTRUCTOR ---
 
 patient::patient()											// First 'patient' class second constructor/variable and no return type means its a constructor
@@ -28,8 +29,8 @@ void patient::TellMyPatientID(){							// --- Tell PatientID ---
 void patient::TellMySex(){									// --- Tell Sex ---
 	cout <<" My Sex is..." << Sex << endl;}	
 
-void patient::TellMyDob(){									// --- Tell Date of Birth ---
-	cout <<" My Date of birth is..." << DoB << endl;}
+void patient::TellMyDob(){									// --- Tell Date of Birth ---	// Convert to date of birth later???
+	cout <<" My Age is..." << DoB << endl;}
 
 	
 //// --- FUNCTIONS TO ASSIGN CHARACTERISTICS ---	
@@ -41,3 +42,7 @@ double	r = ((double) rand() / (RAND_MAX)) ;
 	if (r<=0.7){  
 		Sex=1;}												// No need to define in patient as first line of this chunk already states this is taking place in 'patient'
 	else {Sex=2;}}
+
+void patient::GetMyDateOfBirth(int min, int max){			// --- Assign Date Of Birth ---		
+	DoB=(rand()%(max-min+1)+min)/**365*/;}					// Deal with birthday in years versus years later
+

@@ -13,10 +13,12 @@
 using namespace std;   
 
 
+
 //// --- RUN THE MAIN MODEL ---
 int main(){
 
 	srand(time(NULL));												// Random Number generator using PC time
+		
 
 	//// --- MAKING POINTER TO ARRAY OF PATIENTS ---
 	patient** MyArrayOfPointersToPatients = new patient*[4];		// first 'patient*' is a pointer (address) and 'new patient' and space for 4 patients which will point to actual patienbt below
@@ -34,8 +36,8 @@ int main(){
 	cout<<"My sex is...."<< endl;
 	for(int i=0; i<4; i++){
 		(MyArrayOfPointersToPatients[i])->TellMySex();}				
-	
-	cout<<"My Date of birth is..."<< endl;
+		
+	cout<<"My Age is..."<< endl;									// Convert to date of birth later??
 	for(int i=0; i<4; i++){
 		(MyArrayOfPointersToPatients[i])->TellMyDob();}				
 
@@ -48,22 +50,22 @@ int main(){
 	for(int i=0; i<4; i++){											// --- Assign Sex- ---
 		(MyArrayOfPointersToPatients[i])->GenderDistribution();}
 	
-	for(int i=0; i<4; i++){											// --- Assign DoB ---
-		(MyArrayOfPointersToPatients[i])->DoB=rand();}
+	for(int i=0; i<4; i++){											// --- Assign DoB/Age --- // Convert to date of birth later??
+		(MyArrayOfPointersToPatients[i])->GetMyDateOfBirth(18,80);}
 		
 
 		//// --- GIVE OUTBPUT AFTER ---
-    cout<<"Now, tell me your dates of birth" << endl;
+	cout<<"Now... tell me your Patient ID...."<< endl;
 	for(int i=0; i<4; i++){
-		(MyArrayOfPointersToPatients[i])->TellMyDob(); }
+        (MyArrayOfPointersToPatients[i])->TellMyPatientID(); }
 
 	cout<<"Now... tell me your sex...."<< endl;
 	for(int i=0; i<4; i++){
         (MyArrayOfPointersToPatients[i])->TellMySex(); }
 
-	cout<<"Now... tell me your Patient ID...."<< endl;
+    cout<<"Now, tell me your dates of birth" << endl;
 	for(int i=0; i<4; i++){
-        (MyArrayOfPointersToPatients[i])->TellMyPatientID(); }
+		(MyArrayOfPointersToPatients[i])->TellMyDob(); }			// Convert to date of birth later??
 
 	
 	// insert code here...
